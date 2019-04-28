@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	app := kingpin.New("yaml-merge", "merge yaml files using mergo")
+	app := kingpin.New("yaml-merge-cli", "merge yaml files using mergo")
 	files := app.Arg("files", "Files to merge, from left to right").Required().ExistingFiles()
 	_ = kingpin.MustParse(app.Parse(os.Args[1:]))
 
