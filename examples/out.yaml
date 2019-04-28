@@ -1,0 +1,21 @@
+api_version: 1
+env_variables:
+  CORS_ALLOW_ORIGIN: example.com
+  SOME_SECRET: some-secret
+handlers:
+- script: home.app
+  url: /
+- script: home.app
+  url: /index\.html
+- static_dir: stylesheets
+  url: /stylesheets
+- static_files: static/\1
+  upload: static/.*\.(gif|png|jpg)$
+  url: /(.*\.(gif|png|jpg))$
+- login: admin
+  script: admin.app
+  url: /admin/.*
+- script: not_found.app
+  url: /.*
+runtime: python27
+threadsafe: true

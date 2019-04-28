@@ -1,0 +1,2 @@
+env_variables:
+  CORS_ALLOW_ORIGIN: 'example.com'
